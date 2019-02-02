@@ -34,5 +34,5 @@
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: calc(var(--spacer) * .25);
+  margin-top: calc(var(--spacer) * 0.25);
 }

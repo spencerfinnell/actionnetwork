@@ -289,8 +289,8 @@ legend {
 @media (min-width: 940px) {
 
 .accordion-list-item__label-shim {
-      padding: calc(1rem * .75) 1rem;
-      padding: calc(var(--spacer) * .75) var(--spacer)
+      padding: calc(1rem * 0.75) 1rem;
+      padding: calc(var(--spacer) * 0.75) var(--spacer)
   }
     }
 
@@ -821,6 +821,8 @@ legend {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
     border: 2px solid rgba(32,38,55, 0.35);
   }
 
@@ -828,11 +830,6 @@ legend {
   .avatar__placeholder,
   .avatar__image {
     border-radius: 50%;
-  }
-
-.avatar__placeholder {
-    width: 100%;
-    height: 100%;
   }
 
 .avatar__image {
@@ -1107,8 +1104,8 @@ legend {
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: calc(1rem * .25);
-  margin-top: calc(var(--spacer) * .25);
+  margin-top: calc(1rem * 0.25);
+  margin-top: calc(var(--spacer) * 0.25);
 }
 
 /**

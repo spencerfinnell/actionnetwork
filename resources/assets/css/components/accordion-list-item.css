@@ -94,7 +94,7 @@
     justify-content: space-between;
 
     @media (--desktop) {
-      padding: calc(var(--spacer) * .75) var(--spacer);
+      padding: calc(var(--spacer) * 0.75) var(--spacer);
     }
   }
 

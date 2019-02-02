@@ -1,0 +1,38 @@
+.activist-profile__avatar {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &--green::after {
+    box-shadow: inset 0 0 0 4px #00b43b;
+  }
+
+  &--red::after {
+    box-shadow: inset 0 0 0 4px #b40000;
+  }
+
+  &--blue::after {
+    box-shadow: inset 0 0 0 4px #0045b4;
+  }
+}
+
+.activist-profile__name {
+  margin: 0;
+}
+
+.activist-profile__location {
+  color: rgba(#202637, 0.5);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: calc(var(--spacer) * .25);
+}

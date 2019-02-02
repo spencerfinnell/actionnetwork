@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Activity Directory - Action Network</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/app.css" />
+
+    <link rel="icon" type="image/png" href="https://dev-wec-launcher.pantheonsite.io/getdrew/wp-content/uploads/sites/13/2018/11/ab-favicon.png" />
+  </head>
+
+  <body class="action-network page page--activist-directory">
+
+    <div id="activist-directory" class="container">
+
+      <div class="directory">
+
+        <div class="directory__head">
+          <div class="page-title directory__head-title">
+            <h2>4 People</h2>
+
+            <div class="page-title__actions">
+              <button type="button" class="button button--size-small button--style-alt page-title__action directory__title-action">
+                <span class="button__text">Export</span>
+                <span class="far fa-file-export button__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="directory__head-actions">
+            <button type="button" class="button button--size-large directory__title-action" aria-label="Filter by last name A-Z">
+              <span class="far fa-sort-alpha-down button__icon"></span>
+              <span class="button__text">Last Name</span>
+            </button>
+
+            <div class="button-group" role="group" aria-label="View Modes">
+              <button type="button" class="button button--size-large directory__title-action" aria-label="List View">
+                <span class="far fa-list-ul button__icon"></span>
+              </button>
+
+              <button type="button" class="button button--size-large directory__title-action" aria-label="Stat View">
+                <span class="far fa-chart-bar button__icon"></span>
+              </button>
+
+              <button type="button" class="button button--size-large directory__title-action" aria-label="Map View">
+                <span class="far fa-map button__icon"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-list activist-list directory__list">
+
+          <details class="accordion-list-item activist-list-item">
+            <summary class="accordion-list-item__label" aria-label="View or edit Spencer Finnell's information">
+              <div class="accordion-list-item__label-shim">
+                <div class="media media--align-content-center activist-list-item__overview activist-profile">
+                  <div class="media__item avatar activist-profile__avatar activist-profile__avatar--green">
+                    <div class="avatar__placeholder">SF</div>
+                  </div>
+
+                  <div class="media__body">
+                    <h3 class="activist-profile__name">Spencer Finnell</h3>
+                    <p class="activist-profile__location">Orlando, FL</p>
+                  </div>
+                </div>
+
+                <div class="activist-list-item__quick-contact">
+                  <a href="mailto:spencerfinnell@actionnetwork.org" aria-label="Send an email">
+                    <span class="far fa-envelope"></span>
+                  </a>
+
+                  <a href="tel:4079286251" aria-label="Call">
+                    <span class="far fa-phone"></span>
+                  </a>
+
+                  <a href="mailto:spencerfinnell@actionnetwork.org" aria-label="Send a message">
+                    <span class="far fa-comment"></span>
+                  </a>
+
+                  <a href="https://goo.gl/maps/TFUhMXjiWno" aria-label="View location">
+                    <span class="far fa-map-marker-alt"></span>
+                  </a>
+                </div>
+
+                <div class="accordion-list-item__label-toggle">
+                  <span class="fa-stack">
+                    <span class="far fa-angle-down fa-stack-1x"></span>
+                    <span class="far fa-angle-up fa-stack-1x"></span>
+                  </span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="accordion-list-item__description">
+              <div class="activist-list-item__edit">
+                <form>
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-address-card"></span>
+                      Contact
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" id="email" value="spencerfinnell@actionnetwork.org" class="form-input" />
+                      </p>
+
+                      <p class="form-row" class="form-label">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" value="407-928-6251" class="form-input" />
+                      </p>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-map-marker-alt"></span>
+                      Address
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="address_1" class="form-label">Address line 1:</label>
+                        <input type="text" name="address_1" id="address_1" class="form-input" value="1650 N Mills Ave" />
+                      </p>
+
+                      <p class="form-row">
+                        <label for="address_2" class="form-label">Address line 2:</label>
+                        <input type="text" name="address_2" id="address_2" class="form-input" />
+                      </p>
+                    </div>
+
+                    <p class="form-row">
+                      <label for="city" class="form-label">City:</label>
+                      <input type="text" name="city" id="city" class="form-input" value="Orlando" />
+                    </p>
+
+                    <p class="form-row">
+                      <label for="state" class="form-label">State:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>Florida</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+
+                    <p class="form-row">
+                      <label for="country" class="form-label">Country:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>United States</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+                  </fieldset>
+
+                  <p class="form-row form-row--submit">
+                    <button type="submit" name="submit" class="button button--size-large button--size-block button--style-primary">
+                      Update
+                    </button>
+                  </p>
+                </form>
+              </div>
+
+              <div class="activist-list-item__map">
+                <div class="map">
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?center=1650%20N%20Mills%20AveOrlando,%20FL&zoom=13&scale=2&size=400x1200&maptype=roadmap&key=AIzaSyBWmROOynGCTW3XiStDrdicLUzOZZP6fFA" alt="" />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="accordion-list-item activist-list-item">
+            <summary class="accordion-list-item__label" aria-label="View or edit Ariana Voyer's information">
+              <div class="accordion-list-item__label-shim">
+                <div class="media media--align-content-center activist-list-item__overview activist-profile">
+                  <div class="media__item avatar activist-profile__avatar">
+                    <div class="avatar__placeholder">AV</div>
+                  </div>
+
+                  <div class="media__body">
+                    <h3 class="activist-profile__name">Ariana Voyer</h3>
+                    <p class="activist-profile__location">Orlando, FL</p>
+                  </div>
+                </div>
+
+                <div class="activist-list-item__quick-contact">
+                  <a href="mailto:arianavoyer@actionnetwork.org" aria-label="Send an email">
+                    <span class="far fa-envelope"></span>
+                  </a>
+
+                  <span aria-label="Phone">
+                    <span class="far fa-phone"></span>
+                  </span>
+
+                  <span>
+                    <span class="far fa-comment"></span>
+                  </span>
+
+                  <span>
+                    <span class="far fa-map-marker-alt"></span>
+                  </span>
+                </div>
+
+                <div class="accordion-list-item__label-toggle">
+                  <span class="fa-stack">
+                    <span class="far fa-angle-down fa-stack-1x"></span>
+                    <span class="far fa-angle-up fa-stack-1x"></span>
+                  </span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="accordion-list-item__description">
+              <div class="activist-list-item__edit">
+                <form>
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-address-card"></span>
+                      Contact
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" id="email" value="spencerfinnell@actionnetwork.org" class="form-input" />
+                      </p>
+
+                      <p class="form-row" class="form-label">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" value="" class="form-input" />
+                      </p>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-map-marker-alt"></span>
+                      Address
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="address_1" class="form-label">Address line 1:</label>
+                        <input type="text" name="address_1" id="address_1" class="form-input" value="" />
+                      </p>
+
+                      <p class="form-row">
+                        <label for="address_2" class="form-label">Address line 2:</label>
+                        <input type="text" name="address_2" id="address_2" class="form-input" />
+                      </p>
+                    </div>
+
+                    <p class="form-row">
+                      <label for="city" class="form-label">City:</label>
+                      <input type="text" name="city" id="city" class="form-input" value="Orlando" />
+                    </p>
+
+                    <p class="form-row">
+                      <label for="state" class="form-label">State:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>&mdash;</option>
+                          <option>Florida</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+
+                    <p class="form-row">
+                      <label for="country" class="form-label">Country:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>&mdash;</option>
+                          <option>United States</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+                  </fieldset>
+
+                  <p class="form-row form-row--submit">
+                    <button type="submit" name="submit" class="button button--size-large button--size-block button--style-primary">
+                      Update
+                    </button>
+                  </p>
+                </form>
+              </div>
+
+              <div class="activist-list-item__map">
+                <div class="map">
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?center=1650%20N%20Mills%20AveOrlando,%20FL&zoom=13&scale=2&size=400x1200&maptype=roadmap&key=AIzaSyBWmROOynGCTW3XiStDrdicLUzOZZP6fFA" alt="" />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="accordion-list-item activist-list-item">
+            <summary class="accordion-list-item__label" aria-label="View or edit Jake Caputo's information">
+              <div class="accordion-list-item__label-shim">
+                <div class="media media--align-content-center activist-list-item__overview activist-profile">
+                  <div class="media__item avatar activist-profile__avatar activist-profile__avatar--blue">
+                    <img src="https://gravatar.com/avatar/56D26F0578DCEC875D7A4B177C51D7F9?s=120" class="avatar__image" alt="" />
+                  </div>
+
+                  <div class="media__body">
+                    <h3 class="activist-profile__name">Jake Caputo</h3>
+                    <p class="activist-profile__location">Montgomery, IL</p>
+                  </div>
+                </div>
+
+                <div class="activist-list-item__quick-contact">
+                  <a href="mailto:jakecaputo@actionnetwork.org" aria-label="Send an email">
+                    <span class="far fa-envelope"></span>
+                  </a>
+
+                  <span>
+                    <span class="far fa-phone"></span>
+                  </span>
+
+                  <span>
+                    <span class="far fa-comment"></span>
+                  </span>
+
+                  <a href="https://goo.gl/maps/TFUhMXjiWno" aria-label="View location">
+                    <span class="far fa-map-marker-alt"></span>
+                  </a>
+                </div>
+
+                <div class="accordion-list-item__label-toggle">
+                  <span class="fa-stack">
+                    <span class="far fa-angle-down fa-stack-1x"></span>
+                    <span class="far fa-angle-up fa-stack-1x"></span>
+                  </span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="accordion-list-item__description">
+              <div class="activist-list-item__edit">
+                <form>
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-address-card"></span>
+                      Contact
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" id="email" value="jakecaputo@actionnetwork.org" class="form-input" />
+                      </p>
+
+                      <p class="form-row" class="form-label">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" value="123-123-1234" class="form-input" />
+                      </p>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-map-marker-alt"></span>
+                      Address
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="address_1" class="form-label">Address line 1:</label>
+                        <input type="text" name="address_1" id="address_1" class="form-input" value="1270 Oak Lane" />
+                      </p>
+
+                      <p class="form-row">
+                        <label for="address_2" class="form-label">Address line 2:</label>
+                        <input type="text" name="address_2" id="address_2" class="form-input" />
+                      </p>
+                    </div>
+
+                    <p class="form-row">
+                      <label for="city" class="form-label">City:</label>
+                      <input type="text" name="city" id="city" class="form-input" value="Montgomery" />
+                    </p>
+
+                    <p class="form-row">
+                      <label for="state" class="form-label">State:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>Illinois</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+
+                    <p class="form-row">
+                      <label for="country" class="form-label">Country:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>United States</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+                  </fieldset>
+
+                  <p class="form-row form-row--submit">
+                    <button type="submit" name="submit" class="button button--size-large button--size-block button--style-primary">
+                      Update
+                    </button>
+                  </p>
+                </form>
+              </div>
+
+              <div class="activist-list-item__map">
+                <div class="map">
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?center=Montgomery,%20IL&zoom=14&scale=2&size=400x1200&maptype=roadmap&key=AIzaSyBWmROOynGCTW3XiStDrdicLUzOZZP6fFA" alt="" />
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="accordion-list-item activist-list-item">
+            <summary class="accordion-list-item__label" aria-label="View or edit Martha Grant's information">
+              <div class="accordion-list-item__label-shim">
+                <div class="media media--align-content-center activist-list-item__overview activist-profile">
+                  <div class="media__item avatar activist-profile__avatar activist-profile__avatar--red">
+                    <div class="avatar__placeholder">MG</div>
+                  </div>
+
+                  <div class="media__body">
+                    <h3 class="activist-profile__name">Martha Grant</h3>
+                    <p class="activist-profile__location">Henderson, TX</p>
+                  </div>
+                </div>
+
+                <div class="activist-list-item__quick-contact">
+                  <a href="mailto:marthagrant@actionnetwork.org" aria-label="Send an email">
+                    <span class="far fa-envelope"></span>
+                  </a>
+
+                  <span>
+                    <span class="far fa-phone"></span>
+                  </span>
+
+                  <a href="mailto:marthagrant@actionnetwork.org" aria-label="Send a message">
+                    <span class="far fa-comment"></span>
+                  </a>
+
+                  <a href="https://goo.gl/maps/TFUhMXjiWno" aria-label="View location">
+                    <span class="far fa-map-marker-alt"></span>
+                  </a>
+                </div>
+
+                <div class="accordion-list-item__label-toggle">
+                  <span class="fa-stack">
+                    <span class="far fa-angle-down fa-stack-1x"></span>
+                    <span class="far fa-angle-up fa-stack-1x"></span>
+                  </span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="accordion-list-item__description">
+              <div class="activist-list-item__edit">
+                <form>
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-address-card"></span>
+                      Contact
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" name="email" id="email" value="marthagrant@actionnetwork.org" class="form-input" />
+                      </p>
+
+                      <p class="form-row" class="form-label">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="tel" name="phone" id="phone" value="837-281-1828" class="form-input" />
+                      </p>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>
+                      <span class="far fa-map-marker-alt"></span>
+                      Address
+                    </legend>
+
+                    <div class="form-row-group">
+                      <p class="form-row">
+                        <label for="address_1" class="form-label">Address line 1:</label>
+                        <input type="text" name="address_1" id="address_1" class="form-input" value="1301 Cherry Street" />
+                      </p>
+
+                      <p class="form-row">
+                        <label for="address_2" class="form-label">Address line 2:</label>
+                        <input type="text" name="address_2" id="address_2" class="form-input" />
+                      </p>
+                    </div>
+
+                    <p class="form-row">
+                      <label for="city" class="form-label">City:</label>
+                      <input type="text" name="city" id="city" class="form-input" value="Orlando" />
+                    </p>
+
+                    <p class="form-row">
+                      <label for="state" class="form-label">State:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>Texas</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+
+                    <p class="form-row">
+                      <label for="country" class="form-label">Country:</label>
+
+                      <span class="form-input--select-wrapper">
+                        <select name="country" id="country" class="form-input">
+                          <option>United States</option>
+                        </select>
+
+                        <span class="far fa-angle-down form-input--select-wrapper__arrow"></span>
+                      </span>
+                    </p>
+                  </fieldset>
+
+                  <p class="form-row form-row--submit">
+                    <button type="submit" name="submit" class="button button--size-large button--size-block button--style-primary">
+                      Update
+                    </button>
+                  </p>
+                </form>
+              </div>
+
+              <div class="activist-list-item__map">
+                <div class="map">
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?center=1650%20N%20Mills%20AveOrlando,%20FL&zoom=13&scale=2&size=400x1200&maptype=roadmap&key=AIzaSyBWmROOynGCTW3XiStDrdicLUzOZZP6fFA" alt="" />
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="public/js/app.js"></script>
+  </body>
+</html>

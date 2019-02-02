@@ -1,0 +1,14 @@
+a {
+  font-weight: var(--fontWeightBold);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(#005dff, 0.25);
+
+  &,
+  &:any-link {
+    color: #005dff;
+  }
+
+  &:hover {
+    border: 0;
+  }
+}

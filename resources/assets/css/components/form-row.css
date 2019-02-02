@@ -1,0 +1,7 @@
+.form-row {
+  margin: 0 0 var(--spacer);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

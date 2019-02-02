@@ -1,0 +1,9 @@
+body {
+  color: #202637;
+  font-family: 'Montserrat', system-ui;
+  font-weight: var(--fontWeightBase);
+  background: #eaeef5;
+  margin: 0;
+  padding: 0 0 calc(var(--spacer) * 2);
+  overflow-x: hidden;
+}

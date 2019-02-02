@@ -1,0 +1,56 @@
+/**
+ * Media object.
+ *
+ * Markup:
+ * <div class="media">
+ *   <div class="media__item">
+ *     ...
+ *   </div>
+ *
+ *   <div class="media__body">
+ *     ...
+ *   </div>
+ * </div>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+.media {
+  display: flex;
+
+  &__item {
+    margin-right: var(--spacer);
+  }
+
+  &__body {
+    flex: 1;
+
+    /** A few helpful resets to make generic markup easier to use. */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/** Alignment variations. */
+.media--align {
+  &-content-center {
+    align-items: center;
+  }
+
+  &-item-right {
+    .media__item {
+      margin-left: var(--spacer);
+      margin-right: 0;
+      order: 1;
+    }
+  }
+}

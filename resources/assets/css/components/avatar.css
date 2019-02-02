@@ -1,0 +1,41 @@
+/**
+ * Avatar
+ *
+ * Markup:
+ * <div class="avatar">
+ *   ...
+ * </div>
+ *
+ * <div class="avatar">
+ *   <div class="avatar__placeholder">SF</div>
+ * </div>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+.avatar {
+  position: relative;
+  background: #fff;
+
+  &__placeholder {
+    color: #202637;
+    font-size: 0.935em;
+    font-weight: var(--fontWeightBold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(#202637, 0.35);
+  }
+
+  &,
+  &__placeholder,
+  &__image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+}

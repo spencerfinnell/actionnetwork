@@ -1,0 +1,57 @@
+.directory__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (--desktop) {
+    margin: var(--spacer) 0;
+  }
+
+  &-title,
+  &-actions {
+    display: flex;
+    flex: 1 1 100%;
+
+    @media (--desktop) {
+      flex-basis: auto;
+    }
+  }
+
+  &-title {
+    @media (--desktop) {
+      margin: 0;
+    }
+  }
+
+  &-actions {
+    margin-bottom: -1px;
+    background: #fff;
+    border: 1px solid rgba(#202637, 0.2);
+    border-width: 1px 0;
+
+    @media (--desktop) {
+      justify-content: flex-end;
+      margin-left: auto;
+      background: none;
+      border: 0;
+    }
+
+    @media (--mobile) {
+      .button-group {
+        margin-left: auto;
+      }
+
+      .button,
+      .button-group {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+
+        /* @hack - don't bring to front so background color doesn't hide bottom border. */
+        &:hover {
+          z-index: 0;
+        }
+      }
+    }
+  }
+}

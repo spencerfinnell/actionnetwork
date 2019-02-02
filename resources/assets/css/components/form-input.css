@@ -1,0 +1,52 @@
+.form-input {
+  font-family: 'Montserrat', system-ui;
+  font-weight: var(--fontWeightBase);
+  font-size: 0.935em;
+  line-height: 1;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: calc(var(--spacer) / 3) 0 0;
+  padding: calc(var(--spacer) / 1.5);
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(#202637, 0.2);
+  border-radius: var(--borderRadius);
+
+  &:focus {
+    border-color: #005dff;
+    outline: 0;
+  }
+}
+
+/**
+ * Custom select.
+ *
+ * Markup:
+ * <span class="form-input--select-wrapper">
+ *   <select class="form-input">
+ *     ...
+ *   </select>
+ * </span>
+ */
+.form-input--select-wrapper {
+  position: relative;
+  display: block;
+
+  .form-input--select-wrapper__arrow {
+    color: rgba(#202637, 0.2);
+    position: absolute;
+    top: 50%;
+    right: var(--spacer);
+    transform: translate3d(0, -50%, 0);
+  }
+
+  .form-input {
+    padding: calc(var(--spacer) / 1.3);
+
+    &:focus + .form-input--select-wrapper__arrow {
+      color: #005dff;
+    }
+  }
+}

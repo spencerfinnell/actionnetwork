@@ -1,0 +1,4 @@
+legend {
+  font-weight: var(--fontWeightBold);
+  margin-bottom: var(--spacer);
+}

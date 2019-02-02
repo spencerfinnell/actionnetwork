@@ -1,0 +1,24 @@
+/**
+ * Allow a series of avatars to appear inline.
+ *
+ * Markup:
+ *  <div class="avatar-list">
+ *   <div class="avatar">...</div>
+ *   <div class="avatar">...</div>
+ *  </div>
+ */
+.avatar-list {
+  display: flex;
+
+  .avatar {
+    margin-right: -20%;
+    transition: margin 0.125s ease-in-out;
+    z-index: 1;
+  }
+
+  &:hover {
+    .avatar {
+      margin-right: 5%;
+    }
+  }
+}

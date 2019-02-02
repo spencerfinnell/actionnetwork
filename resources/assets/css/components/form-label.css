@@ -1,0 +1,9 @@
+.form-label {
+  cursor: pointer;
+  font-size: 0.875em;
+  color: rgba(#202637, 0.75);
+
+  .form-row:focus-within & {
+    color: #202637;
+  }
+}

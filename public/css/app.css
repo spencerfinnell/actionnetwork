@@ -1,0 +1,1098 @@
+/**
+ * Action Network
+ */
+
+/* Utilities */
+
+/**
+ * *Very* minimal reset. Use `border-box` on all elements.
+ */
+
+*,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+*:focus {
+    outline: 2px solid #005dff;
+  }
+
+/**
+ * "Fade In" animation.
+ */
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Elements */
+
+body {
+  color: #202637;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  font-weight: 400;
+  font-weight: var(--fontWeightBase);
+  background: #eaeef5;
+  margin: 0;
+  padding: 0 0 calc(1rem * 2);
+  padding: 0 0 calc(var(--spacer) * 2);
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 600;
+  font-weight: var(--fontWeightBold);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0,93,255, 0.25);
+}
+
+a,
+  a:link,
+  a:visited {
+    color: #005dff;
+  }
+
+a,
+  a:-webkit-any-link {
+    color: #005dff;
+  }
+
+a,
+  a:-moz-any-link {
+    color: #005dff;
+  }
+
+a,
+  a:any-link {
+    color: #005dff;
+  }
+
+a:hover {
+    border: 0;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-weight: var(--fontWeightBold);
+}
+
+svg {
+  color: currentColor;
+}
+
+fieldset {
+  margin: 0 0 calc(1rem * 2);
+  margin: 0 0 calc(var(--spacer) * 2);
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  font-weight: 600;
+  font-weight: var(--fontWeightBold);
+  margin-bottom: 1rem;
+  margin-bottom: var(--spacer);
+}
+
+/* Components */
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 940px;
+}
+
+/**
+ * Accordion-style list.
+ *
+ * > Heading
+ * Details
+ *
+ * > Heading
+ * Details
+ *
+ * Markup:
+ * <div class="accordion-list">
+ *   <details class="accordion-list-item">
+ *    <summary class="accordion-list-item__label">Heading</summary>
+ *    <div class="accordion-list-item__description">Details</div>
+ *  </details>
+ * </div>
+ *
+ * The <details> tag is polyfilled for IE.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+ * @link https://github.com/rstacruz/details-polyfill
+ */
+
+.accordion-list {
+  position: relative;
+  margin: 0;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.3s ease-in forwards;
+          animation: fadeIn 0.3s ease-in forwards;
+}
+
+@media (min-width: 940px) {
+
+.accordion-list {
+    border-radius: 4px;
+    border-radius: var(--borderRadius);
+    box-shadow: 0 3px 6px rgba(32,38,55, 0.05)
+}
+  }
+
+/**
+ * Accordion-style list item.
+ *
+ * > Heading
+ * Details
+ *
+ * > Heading
+ * Details
+ *
+ * Markup:
+ * <div class="accordion-list">
+ *   <details class="accordion-list-item">
+ *    <summary class="accordion-list-item__label">Heading</summary>
+ *    <div class="accordion-list-item__description">Details</div>
+ *  </details>
+ * </div>
+ *
+ * The <details> tag is polyfilled for IE.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+ * @link https://github.com/rstacruz/details-polyfill
+ */
+
+.accordion-list-item {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: -1px;
+  background: #fff;
+  border: 1px solid rgba(32,38,55, 0.2);
+  border-width: 1px 0;
+  transition: border 0.15s ease-in-out;
+  overflow: hidden;
+}
+
+.accordion-list-item[open],
+  .accordion-list-item:hover,
+  .accordion-list-item[focus-within] {
+    border-color: rgba(32,38,55, 0.4);
+    z-index: 1; /* Bring the current item to the top so borders are visible. */
+  }
+
+.accordion-list-item[open],
+  .accordion-list-item:hover,
+  .accordion-list-item:focus-within {
+    border-color: rgba(32,38,55, 0.4);
+    z-index: 1; /* Bring the current item to the top so borders are visible. */
+  }
+
+@media (max-width: 940px) {
+    .accordion-list-item[open] {
+      margin: calc(1rem * 0.75) 0;
+      margin: calc(var(--spacer) * 0.75) 0;
+    }
+  }
+
+@media (min-width: 940px) {
+
+.accordion-list-item {
+    border-width: 1px
+
+    /**
+     * [1] Round off the first or only element bottom.
+     * [2] Round off the first or only element's unexpanded summary item.
+     */
+
+    /**
+     * [1] Round off the last or only element bottom.
+     * [2] Round off the last or only element's unexpanded summary item.
+     * [3] Round off the last or only element's expanded description.
+     */
+}
+      .accordion-list-item:only-of-type,                              
+      .accordion-list-item:only-of-type.accordion-list-item__label,                              
+      .accordion-list-item:only-of-type ,                              
+      .accordion-list-item:first-of-type,                              
+      .accordion-list-item:first-of-type.accordion-list-item__label,                              
+      .accordion-list-item:first-of-type  { /* [2] */
+        border-top-left-radius: 4px;
+        border-top-left-radius: var(--borderRadius);
+        border-top-right-radius: 4px;
+        border-top-right-radius: var(--borderRadius);
+      }
+      .accordion-list-item:only-of-type,                                         
+      .accordion-list-item:only-of-type:not([open]) .accordion-list-item__label,                                         
+      .accordion-list-item:only-of-type .accordion-list-item__description,                                         
+      .accordion-list-item:last-of-type,                                         
+      .accordion-list-item:last-of-type:not([open]) .accordion-list-item__label,                                         
+      .accordion-list-item:last-of-type .accordion-list-item__description {      /* [3] */
+        border-bottom-left-radius: 4px;
+        border-bottom-left-radius: var(--borderRadius);
+        border-bottom-right-radius: 4px;
+        border-bottom-right-radius: var(--borderRadius);
+      }
+  }
+
+/**
+ * [1] https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#Customizing_the_disclosure_widget
+ * [2] Safari doesn't play nicely with <summary> tags. Use a standard div.
+ */
+
+.accordion-list-item__label {
+  list-style: none;
+}
+
+/* [1] */
+
+.accordion-list-item__label-shim { /* [2] */
+    padding: 1rem;
+    padding: var(--spacer);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+@media (min-width: 940px) {
+
+.accordion-list-item__label-shim {
+      padding: calc(1rem * .75) 1rem;
+      padding: calc(var(--spacer) * .75) var(--spacer)
+  }
+    }
+
+.accordion-list-item__label::-webkit-details-marker { /* [1] */
+    display: none;
+  }
+
+.accordion-list-item__label:focus {
+    outline: 0;
+  }
+
+/* A few helpful resets to make generic markup easier to use. */
+
+.accordion-list-item__label h1,
+  .accordion-list-item__label h2,
+  .accordion-list-item__label h3,
+  .accordion-list-item__label h4,
+  .accordion-list-item__label h5,
+  .accordion-list-item__label h6 {
+    margin: 0;
+  }
+
+.accordion-list-item__label-toggle {
+  display: none;
+}
+
+@media (min-width: 940px) {
+
+.accordion-list-item__label-toggle {
+    color: rgba(32,38,55, 0.5);
+    align-items: center;
+    margin-left: calc(1rem * 2);
+    margin-left: calc(var(--spacer) * 2);
+    display: flex
+}
+  }
+
+/** Toggle icon. */
+
+.accordion-list-item__label-toggle .fa-angle-down {
+    opacity: 1;
+  }
+
+.accordion-list-item__label-toggle .fa-angle-up {
+    opacity: 0;
+  }
+
+.accordion-list-item[open] .accordion-list-item__label-toggle .fa-angle-down {
+      opacity: 0;
+    }
+
+.accordion-list-item[open] .accordion-list-item__label-toggle .fa-angle-up {
+      opacity: 1;
+    }
+
+.accordion-list-item__description {
+  display: flex;
+  flex-wrap: wrap;
+  height: 0;
+  padding: 1rem;
+  padding: var(--spacer);
+  border-top: 1px solid rgba(32,38,55, 0.1);
+  transition: all 1s ease-in-out;
+}
+
+.accordion-list-item[open] .accordion-list-item__description {
+    opacity: 0;
+    -webkit-animation: fadeIn 0.3s ease-in forwards;
+            animation: fadeIn 0.3s ease-in forwards;
+    height: auto;
+  }
+
+.accordion-list-item__description p:first-child {
+      margin-top: 0;
+    }
+
+.accordion-list-item__description p:last-child {
+      margin-bottom: 0;
+    }
+
+.accordion-list-item__description p:only-child {
+      margin: 0;
+    }
+
+.page-title {
+  margin: 1rem;
+  margin: var(--spacer);
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 940px) {
+
+.page-title {
+    margin-left: 0;
+    margin-right: 0
+}
+  }
+
+/**
+   * <h1> should be used if it is the only title appearing on the page.
+   * <h2> is styled the same way and made available if needed for semantic markup.
+   */
+
+.page-title h1,
+  .page-title h2 {
+    font-size: 200%;
+    margin: 0;
+  }
+
+.page-title__actions {
+    margin-left: auto;
+  }
+
+@media (min-width: 940px) {
+
+.page-title__actions {
+      margin-left: 1rem;
+      margin-left: var(--spacer)
+  }
+    }
+
+/**
+ * Modify some spacing for Font Awesome.
+ */
+
+/** Reset stacked icons to match the actual icon size. */
+
+.fa-stack {
+  width: 1rem;
+  height: 1rem;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  width: 1rem;
+}
+
+.form-row {
+  margin: 0 0 1rem;
+  margin: 0 0 var(--spacer);
+}
+
+.form-row:last-of-type {
+    margin-bottom: 0;
+  }
+
+.form-row-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 calc(1rem * -1) 1rem;
+  margin: 0 calc(var(--spacer) * -1) var(--spacer);
+}
+
+.form-row-group:last-child {
+    margin-bottom: 0;
+  }
+
+.form-row-group .form-row {
+    flex: 1 1 100%;
+    margin: 0 1rem 1rem;
+    margin: 0 var(--spacer) var(--spacer);
+  }
+
+@media (min-width: 940px) {
+
+.form-row-group .form-row {
+      flex: 1;
+      margin-bottom: 0
+  }
+    }
+
+.form-label {
+  cursor: pointer;
+  font-size: 0.875em;
+  color: rgba(32,38,55, 0.75);
+}
+
+.form-row[focus-within] .form-label {
+    color: #202637;
+  }
+
+.form-row:focus-within .form-label {
+    color: #202637;
+  }
+
+.form-input {
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  font-weight: 400;
+  font-weight: var(--fontWeightBase);
+  font-size: 0.935em;
+  line-height: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: calc(1rem / 3) 0 0;
+  margin: calc(var(--spacer) / 3) 0 0;
+  padding: calc(1rem / 1.5);
+  padding: calc(var(--spacer) / 1.5);
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(32,38,55, 0.2);
+  border-radius: 4px;
+  border-radius: var(--borderRadius);
+}
+
+.form-input:focus {
+    border-color: #005dff;
+    outline: 0;
+  }
+
+/**
+ * Custom select.
+ *
+ * Markup:
+ * <span class="form-input--select-wrapper">
+ *   <select class="form-input">
+ *     ...
+ *   </select>
+ * </span>
+ */
+
+.form-input--select-wrapper {
+  position: relative;
+  display: block;
+}
+
+.form-input--select-wrapper .form-input--select-wrapper__arrow {
+    color: rgba(32,38,55, 0.2);
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    right: var(--spacer);
+    transform: translate3d(0, -50%, 0);
+  }
+
+.form-input--select-wrapper .form-input {
+    padding: calc(1rem / 1.3);
+    padding: calc(var(--spacer) / 1.3);
+  }
+
+.form-input--select-wrapper .form-input:focus + .form-input--select-wrapper__arrow {
+      color: #005dff;
+    }
+
+/**
+ * Button.
+ *
+ * Markup:
+ * <button class="button">
+ *   ...
+ * </button>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+
+/**
+ * Base button reset and basic styles.
+ */
+
+.button {
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  font-weight: 400;
+  font-weight: var(--fontWeightBase);
+  font-size: 0.935em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: calc(1rem / 2);
+  padding: calc(var(--spacer) / 2);
+  background: #fff;
+  border: 1px solid rgba(32,38,55, 0.2);
+  border-radius: 4px;
+  border-radius: var(--borderRadius);
+  box-shadow: 0 1px 1px rgba(32,38,55, 0.1);
+}
+
+.button__icon + .button__text {
+    margin-left: calc(1rem / 2);
+    margin-left: calc(var(--spacer) / 2);
+  }
+
+.button__text + .button__icon {
+    margin-left: calc(1rem / 2);
+    margin-left: calc(var(--spacer) / 2);
+  }
+
+.button,
+  .button:link,
+  .button:visited {
+    color: #202637;
+  }
+
+.button,
+  .button:-webkit-any-link {
+    color: #202637;
+  }
+
+.button,
+  .button:-moz-any-link {
+    color: #202637;
+  }
+
+.button,
+  .button:any-link {
+    color: #202637;
+  }
+
+/* [1] Bring the current button to the top so borders are visible. */
+
+.button:hover,
+  .button:focus {
+    cursor: pointer;
+    color: #005dff;
+    border-color: #005dff;
+    box-shadow: 0 2px 4px rgba(32,38,55, 0.1);
+    outline: 0;
+    z-index: 1; /* [1] */
+  }
+
+.button ~ .button {
+  margin-left: 1rem;
+  margin-left: var(--spacer);
+}
+
+/** Size variations. */
+
+.button--size-small {
+    font-size: 0.875em;
+    padding: calc(1rem / 3);
+    padding: calc(var(--spacer) / 3);
+  }
+
+.button--size-small .button__icon + .button__text {
+      margin-left: calc(1rem / 3);
+      margin-left: calc(var(--spacer) / 3);
+    }
+
+/**
+   * [1] Punch up any icon size and add negative margin to avoid extra space.
+   * [2] Ensure a complete pixel value is used to avoid blurry SVG icons.
+   */
+
+.button--size-large {
+    padding: 1rem calc(1rem * 1.25);
+    padding: var(--spacer) calc(var(--spacer) * 1.25);
+  }
+
+.button--size-large .button__icon {
+      font-size: 20px;                                                                               /* [1] */
+      margin: calc(1rem * -0.25) 0 calc(1rem * -0.25) calc(1rem * -0.25);
+      margin: calc(var(--spacer) * -0.25) 0 calc(var(--spacer) * -0.25) calc(var(--spacer) * -0.25); /* [2] */
+    }
+
+.button--size-block {
+    width: 100%;
+    justify-content: center;
+  }
+
+/** Style variations. */
+
+.button--style-primary {
+    color: #fff;
+    background-color: #005dff;
+    border-color: #005dff;
+  }
+
+.button--style-primary:focus,
+      .button--style-primary:focus .button__icon,
+      .button--style-primary:hover,
+      .button--style-primary:hover .button__icon {
+        color: #fff;
+      }
+
+.button--style-primary:focus {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+
+.button--style-alt {
+    --boxShadow: 0 1px 1px rgba(32,38,55, 0.18);
+
+    color: #005dff;
+    font-weight: 600;
+    font-weight: var(--fontWeightBold);
+    border-color: #fff;
+    box-shadow: var(--boxShadow);
+  }
+
+.button--style-alt:hover {
+      box-shadow: var(--boxShadow);
+    }
+
+/**
+ * Allow a series of buttons to appear inline.
+ *
+ * Markup:
+ * <div class="button-group">
+ *   <button class="button button--size-small">S</button>
+ *   <button class="button button--size-small">M</button>
+ *   <button class="button button--size-small">L</button>
+ * </div>
+ */
+
+.button-group {
+  display: flex;
+}
+
+.button-group .button {
+    display: inline-flex;
+    margin-left: -1px;
+    border-radius: 0;
+  }
+
+.button-group .button:first-child {
+      border-top-left-radius: 4px;
+      border-top-left-radius: var(--borderRadius);
+      border-bottom-left-radius: 4px;
+      border-bottom-left-radius: var(--borderRadius);
+    }
+
+.button-group .button:last-child {
+      border-top-right-radius: 4px;
+      border-top-right-radius: var(--borderRadius);
+      border-bottom-right-radius: 4px;
+      border-bottom-right-radius: var(--borderRadius);
+    }
+
+.button-group + .button-group,
+.button + .button-group {
+  margin-left: 1rem;
+  margin-left: var(--spacer);
+}
+
+/**
+ * Media object.
+ *
+ * Markup:
+ * <div class="media">
+ *   <div class="media__item">
+ *     ...
+ *   </div>
+ *
+ *   <div class="media__body">
+ *     ...
+ *   </div>
+ * </div>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+
+.media {
+  display: flex;
+}
+
+.media__item {
+    margin-right: 1rem;
+    margin-right: var(--spacer);
+  }
+
+.media__body {
+    flex: 1;
+  }
+
+/** A few helpful resets to make generic markup easier to use. */
+
+.media__body h1,
+    .media__body h2,
+    .media__body h3,
+    .media__body h4,
+    .media__body h5,
+    .media__body h6 {
+      margin-top: 0;
+    }
+
+.media__body *:last-child {
+      margin-bottom: 0;
+    }
+
+/** Alignment variations. */
+
+.media--align-content-center {
+    align-items: center;
+  }
+
+.media--align-item-right .media__item {
+      margin-left: 1rem;
+      margin-left: var(--spacer);
+      margin-right: 0;
+      order: 1;
+    }
+
+/**
+ * Avatar
+ *
+ * Markup:
+ * <div class="avatar">
+ *   ...
+ * </div>
+ *
+ * <div class="avatar">
+ *   <div class="avatar__placeholder">SF</div>
+ * </div>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+
+.avatar {
+  position: relative;
+  background: #fff;
+}
+
+.avatar__placeholder {
+    color: #202637;
+    font-size: 0.935em;
+    font-weight: 600;
+    font-weight: var(--fontWeightBold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(32,38,55, 0.35);
+  }
+
+.avatar,
+  .avatar__placeholder,
+  .avatar__image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+
+.avatar__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+/**
+ * Allow a series of avatars to appear inline.
+ *
+ * Markup:
+ *  <div class="avatar-list">
+ *   <div class="avatar">...</div>
+ *   <div class="avatar">...</div>
+ *  </div>
+ */
+
+.avatar-list {
+  display: flex;
+}
+
+.avatar-list .avatar {
+    margin-right: -20%;
+    transition: margin 0.125s ease-in-out;
+    z-index: 1;
+  }
+
+.avatar-list:hover .avatar {
+      margin-right: 5%;
+    }
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.map img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+/**
+ * Context-specific components.
+ */
+
+.directory__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 940px) {
+
+.directory__head {
+    margin: 1rem 0;
+    margin: var(--spacer) 0
+}
+  }
+
+.directory__head-title,
+  .directory__head-actions {
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+@media (min-width: 940px) {
+
+.directory__head-title,
+  .directory__head-actions {
+      flex-basis: auto
+  }
+    }
+
+@media (min-width: 940px) {
+
+.directory__head-title {
+      margin: 0
+  }
+    }
+
+.directory__head-actions {
+    margin-bottom: -1px;
+    background: #fff;
+    border: 1px solid rgba(32,38,55, 0.2);
+    border-width: 1px 0;
+  }
+
+@media (min-width: 940px) {
+
+.directory__head-actions {
+      justify-content: flex-end;
+      margin-left: auto;
+      background: none;
+      border: 0
+  }
+    }
+
+@media (max-width: 940px) {
+      .directory__head-actions .button-group {
+        margin-left: auto;
+      }
+
+      .directory__head-actions .button,
+      .directory__head-actions .button-group {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+        /* @hack - don't bring to front so background color doesn't hide bottom border. */
+        .directory__head-actions .button:hover, .directory__head-actions .button-group:hover {
+          z-index: 0;
+        }
+    }
+
+/**
+ * activist-specific list item to be used alongside an Accordion.
+ */
+
+.activist-list-item {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.activist-list-item__overview,
+.activist-list-item__quick-contact {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 940px) {
+
+.activist-list-item__overview,
+.activist-list-item__quick-contact {
+    flex-basis: auto
+}
+  }
+
+.activist-list-item__overview {
+  align-items: center;
+}
+
+@media (max-width: 940px) {
+
+.activist-list-item__quick-contact {
+    display: none
+}
+
+    [open] .activist-list-item__quick-contact {
+      display: flex;
+      justify-content: space-around;
+      margin: 1rem calc(1rem * -1.5) calc(1rem * -1);
+      margin: var(--spacer) calc(var(--spacer) * -1.5) calc(var(--spacer) * -1);
+      padding: calc(1rem * 0.5) 0;
+      padding: calc(var(--spacer) * 0.5) 0;
+      border-top: 1px solid rgba(32,38,55, 0.1);
+    }
+  }
+
+@media (min-width: 940px) {
+
+.activist-list-item__quick-contact {
+    justify-content: flex-end
+}
+  }
+
+.activist-list-item__quick-contact span,
+  .activist-list-item__quick-contact a {
+    font-size: 125%;
+    text-decoration: none;
+    display: block;
+    margin-left: calc(1rem / 2);
+    margin-left: calc(var(--spacer) / 2);
+    padding: calc(1rem / 2);
+    padding: calc(var(--spacer) / 2);
+    border: 0;
+  }
+
+.activist-list-item__quick-contact span {
+    cursor: default;
+  }
+
+.activist-list-item__quick-contact span svg {
+      color: rgba(32,38,55, 0.5);
+    }
+
+.activist-list-item__quick-contact a {
+    color: #005dff;
+  }
+
+.activist-list-item__edit,
+.activist-list-item__map {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 940px) {
+
+.activist-list-item__edit {
+    flex: 1 1 59%
+}
+  }
+
+.activist-list-item__map {
+  display: none;
+}
+
+@media (min-width: 940px) {
+
+.activist-list-item__map {
+    display: block;
+    flex: 0 1 38.5%;
+    margin-left: 1rem;
+    margin-left: var(--spacer)
+}
+  }
+
+.activist-profile__avatar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+.activist-profile__avatar--green::after {
+    box-shadow: inset 0 0 0 4px #00b43b;
+  }
+
+.activist-profile__avatar--red::after {
+    box-shadow: inset 0 0 0 4px #b40000;
+  }
+
+.activist-profile__avatar--blue::after {
+    box-shadow: inset 0 0 0 4px #0045b4;
+  }
+
+.activist-profile__name {
+  margin: 0;
+}
+
+.activist-profile__location {
+  color: rgba(32,38,55, 0.5);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: calc(1rem * .25);
+  margin-top: calc(var(--spacer) * .25);
+}
+
+/**
+ * Variables
+ */
+
+:root {
+  --fontSizeBase: 1rem;
+  --fontWeightBase: 400;
+  --fontWeightBold: 600;
+  --spacer: 1rem;
+  --borderRadius: 4px;
+}
+
+
+/*# sourceMappingURL=app.css.map*/

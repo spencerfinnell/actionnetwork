@@ -1,0 +1,177 @@
+/**
+ * Accordion-style list item.
+ *
+ * > Heading
+ * Details
+ *
+ * > Heading
+ * Details
+ *
+ * Markup:
+ * <div class="accordion-list">
+ *   <details class="accordion-list-item">
+ *    <summary class="accordion-list-item__label">Heading</summary>
+ *    <div class="accordion-list-item__description">Details</div>
+ *  </details>
+ * </div>
+ *
+ * The <details> tag is polyfilled for IE.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+ * @link https://github.com/rstacruz/details-polyfill
+ */
+.accordion-list-item {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: -1px;
+  background: #fff;
+  border: 1px solid rgba(#202637, 0.2);
+  border-width: 1px 0;
+  transition: border 0.15s ease-in-out;
+  overflow: hidden;
+
+  &[open],
+  &:hover,
+  &:focus-within {
+    border-color: rgba(#202637, 0.4);
+    z-index: 1; /* Bring the current item to the top so borders are visible. */
+  }
+
+  @media (--mobile) {
+    &[open] {
+      margin: calc(var(--spacer) * 0.75) 0;
+    }
+  }
+
+  @media (--desktop) {
+    border-width: 1px;
+
+    /**
+     * [1] Round off the first or only element bottom.
+     * [2] Round off the first or only element's unexpanded summary item.
+     */
+    &:only-of-type,
+    &:first-of-type {
+      &,                              /* [1] */
+      &.accordion-list-item__label, { /* [2] */
+        border-top-left-radius: var(--borderRadius);
+        border-top-right-radius: var(--borderRadius);
+      }
+    }
+
+    /**
+     * [1] Round off the last or only element bottom.
+     * [2] Round off the last or only element's unexpanded summary item.
+     * [3] Round off the last or only element's expanded description.
+     */
+    &:only-of-type,
+    &:last-of-type {
+      &,                                         /* [1] */
+      &:not([open]) .accordion-list-item__label, /* [2] */
+      & .accordion-list-item__description {      /* [3] */
+        border-bottom-left-radius: var(--borderRadius);
+        border-bottom-right-radius: var(--borderRadius);
+      }
+    }
+  }
+}
+
+/**
+ * [1] https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#Customizing_the_disclosure_widget
+ * [2] Safari doesn't play nicely with <summary> tags. Use a standard div.
+ */
+.accordion-list-item__label {
+  list-style: none; /* [1] */
+
+  &-shim { /* [2] */
+    padding: var(--spacer);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (--desktop) {
+      padding: calc(var(--spacer) * .75) var(--spacer);
+    }
+  }
+
+  &::-webkit-details-marker { /* [1] */
+    display: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  /* A few helpful resets to make generic markup easier to use. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+.accordion-list-item__label-toggle {
+  display: none;
+
+  @media (--desktop) {
+    color: rgba(#202637, 0.5);
+    align-items: center;
+    margin-left: calc(var(--spacer) * 2);
+    display: flex;
+  }
+
+  /** Toggle icon. */
+  .fa-angle-down {
+    opacity: 1;
+  }
+
+  .fa-angle-up {
+    opacity: 0;
+  }
+
+  .accordion-list-item[open] & {
+    .fa-angle-down {
+      opacity: 0;
+    }
+
+    .fa-angle-up {
+      opacity: 1;
+    }
+  }
+}
+
+.accordion-list-item__description {
+  display: flex;
+  flex-wrap: wrap;
+  height: 0;
+  padding: var(--spacer);
+  border-top: 1px solid rgba(#202637, 0.1);
+  transition: all 1s ease-in-out;
+
+  .accordion-list-item[open] & {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    height: auto;
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+}

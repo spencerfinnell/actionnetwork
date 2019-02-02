@@ -1,0 +1,13 @@
+/**
+ * Modify some spacing for Font Awesome.
+ */
+
+/** Reset stacked icons to match the actual icon size. */
+.fa-stack {
+  width: 1rem;
+  height: 1rem;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  width: 1rem;
+}

@@ -1,0 +1,33 @@
+/**
+ * Accordion-style list.
+ *
+ * > Heading
+ * Details
+ *
+ * > Heading
+ * Details
+ *
+ * Markup:
+ * <div class="accordion-list">
+ *   <details class="accordion-list-item">
+ *    <summary class="accordion-list-item__label">Heading</summary>
+ *    <div class="accordion-list-item__description">Details</div>
+ *  </details>
+ * </div>
+ *
+ * The <details> tag is polyfilled for IE.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+ * @link https://github.com/rstacruz/details-polyfill
+ */
+.accordion-list {
+  position: relative;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+
+  @media (--desktop) {
+    border-radius: var(--borderRadius);
+    box-shadow: 0 3px 6px rgba(#202637, 0.05);
+  }
+}

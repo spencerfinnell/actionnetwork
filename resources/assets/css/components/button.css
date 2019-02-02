@@ -1,0 +1,122 @@
+/**
+ * Button.
+ *
+ * Markup:
+ * <button class="button">
+ *   ...
+ * </button>
+ *
+ * A series of modifiers are available to adjust the size and color.
+ */
+
+/**
+ * Base button reset and basic styles.
+ */
+.button {
+  font-family: 'Montserrat', system-ui;
+  font-weight: var(--fontWeightBase);
+  font-size: 0.935em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: calc(var(--spacer) / 2);
+  background: #fff;
+  border: 1px solid rgba(#202637, 0.2);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 1px 1px rgba(#202637, 0.1);
+
+  &__icon + .button__text {
+    margin-left: calc(var(--spacer) / 2);
+  }
+
+  &__text + .button__icon {
+    margin-left: calc(var(--spacer) / 2);
+  }
+
+  &,
+  &:any-link {
+    color: #202637;
+  }
+
+  /* [1] Bring the current button to the top so borders are visible. */
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: #005dff;
+    border-color: #005dff;
+    box-shadow: 0 2px 4px rgba(#202637, 0.1);
+    outline: 0;
+    z-index: 1; /* [1] */
+  }
+}
+
+.button ~ .button {
+  margin-left: var(--spacer);
+}
+
+/** Size variations. */
+.button--size {
+  &-small {
+    font-size: 0.875em;
+    padding: calc(var(--spacer) / 3);
+
+    .button__icon + .button__text {
+      margin-left: calc(var(--spacer) / 3);
+    }
+  }
+
+  /**
+   * [1] Punch up any icon size and add negative margin to avoid extra space.
+   * [2] Ensure a complete pixel value is used to avoid blurry SVG icons.
+   */
+  &-large {
+    padding: var(--spacer) calc(var(--spacer) * 1.25);
+
+    .button__icon {
+      font-size: 20px;                                                                               /* [1] */
+      margin: calc(var(--spacer) * -0.25) 0 calc(var(--spacer) * -0.25) calc(var(--spacer) * -0.25); /* [2] */
+    }
+  }
+
+  &-block {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/** Style variations. */
+.button--style {
+  &-primary {
+    color: #fff;
+    background-color: #005dff;
+    border-color: #005dff;
+
+    &:focus,
+    &:hover {
+      &,
+      .button__icon {
+        color: #fff;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid #fff;
+      outline-offset: -4px;
+    }
+  }
+
+  &-alt {
+    --boxShadow: 0 1px 1px rgba(#202637, 0.18);
+
+    color: #005dff;
+    font-weight: var(--fontWeightBold);
+    border-color: #fff;
+    box-shadow: var(--boxShadow);
+
+    &:hover {
+      box-shadow: var(--boxShadow);
+    }
+  }
+}

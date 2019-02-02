@@ -1,0 +1,28 @@
+.page-title {
+  margin: var(--spacer);
+  display: flex;
+  align-items: center;
+
+  @media (--desktop) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /**
+   * <h1> should be used if it is the only title appearing on the page.
+   * <h2> is styled the same way and made available if needed for semantic markup.
+   */
+  h1,
+  h2 {
+    font-size: 200%;
+    margin: 0;
+  }
+
+  &__actions {
+    margin-left: auto;
+
+    @media (--desktop) {
+      margin-left: var(--spacer);
+    }
+  }
+}

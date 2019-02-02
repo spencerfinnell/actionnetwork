@@ -1,0 +1,34 @@
+/**
+ * Allow a series of buttons to appear inline.
+ *
+ * Markup:
+ * <div class="button-group">
+ *   <button class="button button--size-small">S</button>
+ *   <button class="button button--size-small">M</button>
+ *   <button class="button button--size-small">L</button>
+ * </div>
+ */
+.button-group {
+  display: flex;
+
+  .button {
+    display: inline-flex;
+    margin-left: -1px;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: var(--borderRadius);
+      border-bottom-left-radius: var(--borderRadius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--borderRadius);
+      border-bottom-right-radius: var(--borderRadius);
+    }
+  }
+}
+
+.button-group + .button-group,
+.button + .button-group {
+  margin-left: var(--spacer);
+}

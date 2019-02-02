@@ -1,0 +1,20 @@
+.form-row-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 calc(var(--spacer) * -1) var(--spacer);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-row {
+    flex: 1 1 100%;
+    margin: 0 var(--spacer) var(--spacer);
+
+    @media (--desktop) {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+}

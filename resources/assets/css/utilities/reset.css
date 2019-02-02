@@ -1,0 +1,14 @@
+/**
+ * *Very* minimal reset. Use `border-box` on all elements.
+ */
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  &:focus {
+    outline: 2px solid #005dff;
+  }
+}

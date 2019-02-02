@@ -20,7 +20,7 @@ The directory is comprised of a series of reusable `components`. These `componen
 
 Assets are managed using [Webpack](https://webpack.js.org/). [PostCSS](https://postcss.org/) helps transform CSS and allows modern CSS techniques such as variables, custom media queries, and more to be utilized.
 
-other libraries such as [Font Awesome](https://fontawesome.com/) and CSS shims are automatically compiled in to the directory's Javascript file on build.
+Other libraries such as [Font Awesome](https://fontawesome.com/) and CSS shims are automatically compiled in to the directory's Javascript file on build.
 
 ### Install
 

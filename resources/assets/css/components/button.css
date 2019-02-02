@@ -26,6 +26,7 @@
   border: 1px solid rgba(#202637, 0.2);
   border-radius: var(--borderRadius);
   box-shadow: 0 1px 1px rgba(#202637, 0.1);
+  transition: all 0.2s ease-in-out;
 
   &__icon + .button__text {
     margin-left: calc(var(--spacer) / 2);

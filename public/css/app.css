@@ -201,7 +201,7 @@ legend {
   background: #fff;
   border: 1px solid rgba(32,38,55, 0.2);
   border-width: 1px 0;
-  transition: border 0.15s ease-in-out;
+  transition: all 0.2s ease-in-out;
   overflow: hidden;
 }
 
@@ -498,6 +498,7 @@ legend {
   border: 1px solid rgba(32,38,55, 0.2);
   border-radius: 4px;
   border-radius: var(--borderRadius);
+  transition: all 0.2s ease-in-out;
 }
 
 .form-input:focus {
@@ -571,6 +572,7 @@ legend {
   border-radius: 4px;
   border-radius: var(--borderRadius);
   box-shadow: 0 1px 1px rgba(32,38,55, 0.1);
+  transition: all 0.2s ease-in-out;
 }
 
 .button__icon + .button__text {
@@ -806,6 +808,9 @@ legend {
 .avatar {
   position: relative;
   background: #fff;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
 }
 
 .avatar__placeholder {
@@ -822,14 +827,31 @@ legend {
 .avatar,
   .avatar__placeholder,
   .avatar__image {
-    width: 45px;
-    height: 45px;
     border-radius: 50%;
   }
 
-.avatar__img {
+.avatar__placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+.avatar__image {
     max-width: 100%;
     height: auto;
+  }
+
+/* Size variations. */
+
+.avatar--size-small {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+
+.avatar--size-large {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
   }
 
 /**
@@ -848,12 +870,14 @@ legend {
 
 .avatar-list .avatar {
     margin-right: -20%;
-    transition: margin 0.125s ease-in-out;
+    transition: all 0.125s ease-in-out;
     z-index: 1;
+    transform: rotate(-15deg);
   }
 
 .avatar-list:hover .avatar {
       margin-right: 5%;
+      transform: rotate(0deg);
     }
 
 .map {
@@ -1016,7 +1040,12 @@ legend {
 
 .activist-list-item__quick-contact a {
     color: #005dff;
+    transition: transform 0.15s ease-in-out;
   }
+
+.activist-list-item__quick-contact a:hover {
+      transform: translate3d(0, -2px, 0);
+    }
 
 .activist-list-item__edit,
 .activist-list-item__map {

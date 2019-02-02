@@ -30,7 +30,7 @@
   background: #fff;
   border: 1px solid rgba(#202637, 0.2);
   border-width: 1px 0;
-  transition: border 0.15s ease-in-out;
+  transition: all 0.2s ease-in-out;
   overflow: hidden;
 
   &[open],

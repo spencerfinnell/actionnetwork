@@ -29,6 +29,10 @@
       justify-content: space-around;
       margin-bottom: 1rem;
     }
+
+    .component-item--left {
+      justify-content: flex-start;
+    }
     </style>
   </head>
 
@@ -454,35 +458,46 @@
 
         <div class="media__body">
           <h3>Jake Caputo</h3>
-          <p>Redono Beach, CA</p>
         </div>
       </div>
 
-      <h2 class="component-title">Avatar</h2>
+      <br />
 
-      <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-
-        <div class="avatar" style="margin-right: 1rem;">
+      <div class="media media--align-item-right media--align-content-center" style="max-width: 185px;">
+        <div class="media__item avatar">
           <div class="avatar__placeholder">JC</div>
         </div>
 
+        <div class="media__body">
+          <h3>Jake Caputo</h3>
+        </div>
+      </div>
+
+      <h2 class="component-title">Avatars</h2>
+
+      <p>
+        <div class="avatar">
+          <div class="avatar__placeholder">JC</div>
+        </div>
+      </p>
+
+      <p>
         <div class="avatar">
           <img src="https://gravatar.com/avatar/56D26F0578DCEC875D7A4B177C51D7F9?s=120" class="avatar__image" alt="" />
         </div>
+      </p>
 
-      </div>
-
-      <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+      <div class="component-item component-item--left">
 
         <div class="avatar-list">
-          <div class="avatar">
-            <div class="avatar__placeholder">JC</div>
-          </div>
-          <div class="avatar">
+          <div class="avatar avatar--size-small">
             <img src="https://gravatar.com/avatar/56D26F0578DCEC875D7A4B177C51D7F9?s=120" class="avatar__image" alt="" />
           </div>
-          <div class="avatar">
-            <div class="avatar__placeholder">SF</div>
+          <div class="avatar avatar--size-small">
+            <img src="https://gravatar.com/avatar/56D26F0578DCEC875D7A4B177C51D7F9?s=120" class="avatar__image" alt="" />
+          </div>
+          <div class="avatar avatar--size-small">
+            <img src="https://gravatar.com/avatar/56D26F0578DCEC875D7A4B177C51D7F9?s=120" class="avatar__image" alt="" />
           </div>
         </div>
 

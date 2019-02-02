@@ -13,6 +13,7 @@
   background: #fff;
   border: 1px solid rgba(#202637, 0.2);
   border-radius: var(--borderRadius);
+  transition: all 0.2s ease-in-out;
 
   &:focus {
     border-color: #005dff;

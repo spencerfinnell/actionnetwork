@@ -59,6 +59,11 @@
 
   a {
     color: #005dff;
+    transition: transform 0.15s ease-in-out;
+
+    &:hover {
+      transform: translate3d(0, -2px, 0);
+    }
   }
 }
 

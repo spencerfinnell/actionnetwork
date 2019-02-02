@@ -15,6 +15,9 @@
 .avatar {
   position: relative;
   background: #fff;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
 
   &__placeholder {
     color: #202637;
@@ -29,13 +32,31 @@
   &,
   &__placeholder,
   &__image {
-    width: 45px;
-    height: 45px;
     border-radius: 50%;
   }
 
-  &__img {
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
     max-width: 100%;
     height: auto;
+  }
+}
+
+/* Size variations. */
+.avatar--size {
+  &-small {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+
+  &-large {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
   }
 }
